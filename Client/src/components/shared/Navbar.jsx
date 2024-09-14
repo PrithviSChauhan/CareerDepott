@@ -5,8 +5,8 @@ import {
 } from "@radix-ui/react-popover";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../button";
-import { Avatar, AvatarImage } from "../avatar";
+import { Button } from "../ui/button";
+import { Avatar, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
 
 const Navbar = () => {
@@ -17,7 +17,10 @@ const Navbar = () => {
       <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
         <div>
           <h1 className="text-3xl font-bold">
-            Career<span className="text-[#f83002]">Deepot</span>
+            Career
+            <span className="text-[#f83002]">
+              Deepot<span className="text-[#50C878]">t</span>
+            </span>
           </h1>
         </div>
         <div className="flex items-center gap-12">
@@ -30,17 +33,22 @@ const Navbar = () => {
           {!user ? (
             <div className="flex flex-row gap-3">
               <div>
-                <Button
-                  variant="outLine"
-                  className="text-gray-600 hover:text-gray-800 bg-white border-0 hover:outline"
-                >
-                  Login
-                </Button>
+                <Link to="/Login">
+                  <Button
+                    variant="outLine"
+                    className="text-gray-600 hover:text-gray-800 bg-white border-0 hover:outline"
+                  >
+                    Login
+                  </Button>
+                </Link>
               </div>
               <div>
-                <Button className="text-white  hover:bg-[#5b30a6] bg-[#6A38C2] border-black-2">
-                  Signup
-                </Button>
+                <Link to="signup">
+                  {" "}
+                  <Button className="text-white  hover:bg-[#5b30a6] bg-[#6A38C2] border-black-2">
+                    Signup
+                  </Button>
+                </Link>
               </div>
             </div>
           ) : (
