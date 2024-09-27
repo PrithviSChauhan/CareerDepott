@@ -10,7 +10,7 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
 
 const Navbar = () => {
-  const user = false;
+  const user = true;
 
   return (
     <div className="bg-white">
@@ -24,10 +24,10 @@ const Navbar = () => {
           </h1>
         </div>
         <div className="flex items-center gap-12">
-          <ul className="flex text-xl items-center gap-7">
-            <li>Home</li>
-            <li>Jobs</li>
-            <li>Browse</li>
+          <ul className="flex text-xl items-center gap-7 ">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/jobs">Jobs</Link></li>
+            <li><Link to="/browse">Browse</Link></li>
           </ul>
 
           {!user ? (
