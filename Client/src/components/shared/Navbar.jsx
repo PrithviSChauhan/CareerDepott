@@ -8,9 +8,12 @@ import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
+import { useSelector } from "react-redux";
+import store from "@/redux/store";
 
 const Navbar = () => {
-  const user = true;
+
+  const {user} = useSelector(store=>store.auth);
 
   return (
     <div className="bg-white">
@@ -83,7 +86,7 @@ const Navbar = () => {
                       variant="link"
                       className="text-gray-600 hover:text-gray-800 bg-white border-0"
                     >
-                      View Profile
+                       <Link to="/profile">View Profile</Link>
                     </Button>
                   </div>
                   <div className="flex items-center gap-2">
