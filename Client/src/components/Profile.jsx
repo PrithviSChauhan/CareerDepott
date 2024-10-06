@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./shared/Navbar";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { Badge, Contact, Mail, Pen } from "lucide-react";
 import { Label } from "./ui/label";
 import AppliedJobTable from "./AppliedJobTable";
+import UpdateProfileDialog from "./UpdateProfileDialog";
 
 const Skills = ["HTML", "CSS", "JAVASCRIPT", "REACT.JS"];
-
 const isHaveResume = true;
 
 const Profile = () => {
+  const [open, setOpen] = useState(false);
+
+
+
   return (
     <div>
       <Navbar />
@@ -28,7 +32,7 @@ const Profile = () => {
               </p>
             </div>
           </div>
-          <Button className="text-xs py-0.5 px-2 text-right" varint="outline">
+          <Button onClick={() => setOpen(true)} className="text-xs py-0.5 px-2 text-right" varint="outline">
             <Pen />
           </Button>
         </div>
@@ -45,7 +49,7 @@ const Profile = () => {
         <div className="">
           <h1 className="font-bold text-xl my-2">Skills</h1>
           <div className="flex items-center">
-            {Skills.length !== 0 ? (
+            {Skills.length !== 0 ? ( 
               Skills.map((item, index) => (
                 <Badge className="my-1 mx-2 font-bold text-lg" key={index}>
                   {item ? item.toString() : "NA"}
@@ -67,8 +71,8 @@ const Profile = () => {
       <div className="rounded-2xl max-w-4xl mx-auto bg-white">
             <h1 className="text-lg font-bold">All Applied Jobs</h1>
             <AppliedJobTable/>
-
         </div>
+        <UpdateProfileDialog open={open} setOpen={setOpen}/>
     </div>
   );
 };
