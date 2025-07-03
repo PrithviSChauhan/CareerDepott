@@ -12,7 +12,9 @@ const CheckAuth = () => {
 
     const checkAuth = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/auth/check");
+        const res = await axios.get(
+          `${import.meta.env.VITE_SERVER_API_END_POINT}/auth/check`
+        );
         if (res.data.success) {
           dispatch(setUser(res.data.user));
         }
