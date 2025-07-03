@@ -6,15 +6,14 @@ import { Badge, Contact, Mail, Pen } from "lucide-react";
 import { Label } from "./ui/label";
 import AppliedJobTable from "./AppliedJobTable";
 import UpdateProfileDialog from "./UpdateProfileDialog";
+import { useSelector } from "react-redux";
 
 const Skills = ["HTML", "CSS", "JAVASCRIPT", "REACT.JS"];
 const isHaveResume = true;
 
 const Profile = () => {
   const [open, setOpen] = useState(false);
-
-
-
+  const {user} = useSelector((store) => store.auth)
   return (
     <div>
       <Navbar />
@@ -39,7 +38,7 @@ const Profile = () => {
         <div className="my-5">
           <div className="flex items-center gap-3">
             <Mail />
-            <span>prithvi@gmail.com</span>
+            <span></span>
           </div>
           <div className="flex items-center gap-3 my-3">
             <Contact />

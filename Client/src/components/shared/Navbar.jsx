@@ -46,12 +46,12 @@ const Navbar = () => {
                 </Link>
               </div>
               <div>
-                <Link to="signup">
+                <Link to="/signup">
                   {" "}
                   <Button className="text-white  hover:bg-[#5b30a6] bg-[#6A38C2] border-black-2">
                     Signup
                   </Button>
-                </Link>
+                </Link> 
               </div>
             </div>
           ) : (

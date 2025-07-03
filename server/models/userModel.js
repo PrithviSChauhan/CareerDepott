@@ -11,12 +11,12 @@ const userSchema = new mongoose.Schema({
         unique: true
     },
     phoneNum:{
-        type: Number,
+        type: String,
         required: true, 
-        unique: true
+        // unique: true
     },
     password:{
-        type: String,
+        type: String, 
         required: true
     },
     role:{
@@ -25,13 +25,14 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     profile:{
-        type: String,
+        bio: { type: String, default: "" },
         skills:[{type: String}],
-        resume:{type:String}, // url to resume.file
+        resume:{type:String},
         resumeOriginalName:{type: String},
         company:{type:mongoose.Schema.Types.ObjectId, ref:'Company'},
         profilePhoto:{type: String, default:""}
     },
 },{timestamps: true});
 
-export const user = mongoose.model('user', userSchema);
+export const user = mongoose.model('User', userSchema);
+
