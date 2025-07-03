@@ -54,12 +54,14 @@ const Profile = () => {
         resumeData.append("folder", "careerDepott/user/resume");
         resumeData.append(
           "upload_preset",
-          process.env.VITE_UNSIGNED_RESUME_PRESET
+          import.meta.env.VITE_UNSIGNED_RESUME_PRESET
         );
 
         try {
           const res = await axios.post(
-            `https://api.cloudinary.com/v1_1/${process.env.VITE_CLOUDINARY_NAME}/raw/upload`,
+            `https://api.cloudinary.com/v1_1/${
+              import.meta.env.VITE_CLOUDINARY_NAME
+            }/raw/upload`,
             resumeData,
             { withCredentials: false }
           );
@@ -82,12 +84,14 @@ const Profile = () => {
         photoData.append("folder", "careerDepott/user/profile_picture");
         photoData.append(
           "upload_preset",
-          process.env.VITE_UNSIGNED_PROFILE_PRESET
+          import.meta.env.VITE_UNSIGNED_PROFILE_PRESET
         );
 
         try {
           const res = await axios.post(
-            `https://api.cloudinary.com/v1_1/${process.env.VITE_CLOUDINARY_NAME}/image/upload`,
+            `https://api.cloudinary.com/v1_1/${
+              import.meta.env.VITE_CLOUDINARY_NAME
+            }/image/upload`,
             photoData,
             { withCredentials: false }
           );
