@@ -12,7 +12,7 @@ import Footer from "../Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "@/redux/authSlice";
 
-const Login = () => { 
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
@@ -27,7 +27,7 @@ const Login = () => {
 
     if (!email || !password || !role) {
       toast.error("Please fill all the fields.");
-      return; 
+      return;
     }
 
     try {
